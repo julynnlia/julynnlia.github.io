@@ -1,103 +1,190 @@
 <!DOCTYPE html>
-<!--
-    Anything you put in between the double-dash arrow symbols shown around
-    this block of text is designated a 'comment' intended for human coders
-    and ignored by the computer. The top "<!DOCTYPE html>" line of code 
-    declares that this text file is to be interpreted as HTML code.
--->
-
-<html lang=en>
-<!--
-    This opening tag marks the start of the html code.  Everything below
-    until the </html> closing tag is part of this element. "lang" is an
-    attribute defining the language of the website. The value "en" 
-    indicates this site is written in English. We indent the content
-    inside an element to make it easier for people to read and understand.
--->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-
-<link rel="stylesheet" href="https://classless.de/classless.css">
-
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
-
-<link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
-
-
+<html lang="en">
     <head>
-    <!--Code *about* the website, NOT displayed in the browser window.-->
-
-        <meta charset="UTF-8"> <!--Sets site to use standard characters.-->
-
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Sizes your site to the visitor's screen size -->
+        <meta name="author" content="JuLynn Samuels">
+        <title>JuLynn Samuels</title>
+        <link rel="icon" type="image/png" href="favicon.png">
 
-        <meta name="author" content="Your Name">
-        <!--
-            Some tags like "meta" are self-closing. They have "attributes" 
-            but no inner content and they don't need or use a closing tag.
-        -->
+        <!-- Bubblegum pink theme. The nav uses colored blocks (see <body>). -->
+        <style>
+            body {
+                background-color: #ffe4ec;
+                color: #5a2333;
+                font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+                line-height: 1.6;
+                max-width: 760px;
+                margin: 0 auto;
+                padding: 0 1.25rem 4rem;
+            }
 
-        <title>Yourname's Projectname</title>
-        <!--The 'title' is what's displayed in the browser tab.-->
+            /* Navigation bar made of colored blocks that sit side by side. */
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                position: sticky;
+                top: 0;
+                z-index: 10;
+            }
 
-        <link rel="stylesheet" href="/style.css">
-        <!--
-            HTML (HyperText Markup Language) code is for the website 
-            content. CSS (Cascading Style Sheets) code is for the website 
-            style. The line above tells the browser the file location and 
-            file name to find this code that you'll write/edit there.
-        -->
+            nav a {
+                flex: 1;
+                text-decoration: none;
+            }
 
-        <link rel="icon" type="image/png" href="/favicon.png">
-        <!--
-            If you made/found a favicon, export/name it exactly favicon.png
-            and upload to the top level of your repo, then this line of
-            code will use it as your site icon in the browser tab.
-        -->
+            /* Each block is an <h1> with an inline background color. */
+            nav h1 {
+                margin: 0;
+                padding: 1rem 0.75rem;
+                text-align: center;
+                color: white;
+                font-size: 1.05rem;
+            }
 
+            nav h1:hover {
+                filter: brightness(1.1);
+            }
+
+            /* Only the active "page" section is shown at a time. */
+            .page[hidden] {
+                display: none;
+            }
+
+            h1 {
+                color: #ff1f7a;
+                background-color: #ffc1cc;
+                padding: 1rem 1.25rem;
+                border-radius: 16px;
+                text-align: center;
+            }
+
+            h2 {
+                color: #ff5e9c;
+                border-bottom: 3px solid #ffc1cc;
+                padding-bottom: 0.3rem;
+            }
+
+            img {
+                border: 4px solid #ffc1cc;
+                border-radius: 12px;
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
     </head>
 
-    <body> <!--Everything to be displayed in the browser window.-->
-        
-          
-        <!--example headings, paragraphs, lists-->
-        <h1>Julynn's E portfolio</h1>
-        background-color: pink;
-        <p>To start off this process of screen print art we first went into 
-Adobe Photoshop and thought of something we wanted to screen print.
-After we thought about and sketched out our Photoshop idea for the screenprint 
-artwork, we uploaded it to a concept development sheet and started to
-develop our sketch. </p>
- 
+    <body>
 
-      
-        <h2>This is the second biggest heading type</h2>
-        <p>Another paragraph</p>
-        <h2>Another second-biggest-heading</h2>
-        <ul>
-            <li>use ul for bullet point (unordered) lists</li>
-            <li>use ol for numbered (ordered) lists</li>
-        </ul>
+        <!-- Navigation bar: colored blocks that switch between sections. -->
+        <nav>
+            <a href="#" onclick="showPage('home'); return false;">
+                <h1 style="background-color:Tomato;">Home</h1>
+            </a>
+            <a href="#" onclick="showPage('screenprint'); return false;">
+                <h1 style="background-color:DodgerBlue;">Screen Print Design</h1>
+            </a>
+            <a href="#" onclick="showPage('biotech'); return false;">
+                <h1 style="background-color:MediumSeaGreen;">Biotech Breakthrough</h1>
+            </a>
+        </nav>
 
-        <!--example images (uploaded to repo's "images" directory)-->
-        <img 
-            src="/images/exact_image_name.webp"
-            width="560" 
-            alt="Your description of image in words">
+        <!-- ===== HOME ===== -->
+        <section id="home" class="page">
+            <h1>Welcome to JuLynn Samuels Webpage</h1>
+        </section>
 
-        <!--example video (or other content from another webpage)-->
-        <iframe 
-            
-        </iframe>
-        <!-- replace FILE_ID in the example link above with the
-             exact text from the equivalent spot within your 
-             actual video's Google Drive shared link -->
+        <!-- ===== SCREEN PRINT DESIGN ===== -->
+        <section id="screenprint" class="page" hidden>
+            <h1>Screen Print Design</h1>
 
-        <!--example links-->
-        <a href="/about.html">Link to page/file on your website</a>
-        <a href="https://github.com" target="_blank">Link to
-            external page on the web (_blank opens in new tab)</a>
+            <h2>Designing and Building the Frame</h2>
+            <p>
+                The first part of the project was coming up with our design ideas
+                and building a strong frame. We started by using Adobe Photoshop
+                to brainstorm and sketch out different things we wanted to screen
+                print. After we picked our favorite idea, we uploaded the sketch
+                to a concept development sheet to work on the details. Next, we
+                used Adobe Illustrator to prepare our content and make a mixing
+                guide and cut list to start building the frames out of wood. We
+                measured, marked, and cut the wood to the exact size we needed.
+                Finally, we glued and stapled the corners together so the frame
+                would be sturdy enough to hold the mesh tight.
+            </p>
+
+            <!-- Image file lives in your repo at images/IMG_9995.JPG -->
+            <img src="images/IMG_9995.JPG" width="560"
+                 alt="Concept sketch and wooden frame">
+
+            <h2>Preparing the Screen and Printing</h2>
+            <p>
+                Once the wooden frame was finished, we had to get the screen and
+                the vinyl stencil ready for printing. We stretched the mesh fabric
+                as tight as we could across the wood frame and used staples, a
+                hammer, and tape to hold it down flat. Next, we sent our Photoshop
+                design to a software cutting machine called Silhouette Studio to
+                cut our own design. After this, we carefully started "weeding" my
+                design. This means removing the sticker material from everywhere I
+                want ink to pass through my stencil and leaving on the mat the
+                stencil pattern that will block/prevent ink from reaching the
+                print. To finish up, we used a heat press to iron our vinyl
+                stencil right onto the mesh fabric. We also put tape around the
+                inside edges of the frame to make sure no extra ink would leak
+                through when we started printing. Throughout this project, I
+                mastered the 21st century skill of communication and collaboration
+                because our class switched tables every couple of months, forcing
+                me to constantly adjust to new environments and people's different
+                kinds of workstyles. I learned how to quickly jump into a new
+                group, communicate effectively, and keep my project on track.
+            </p>
+
+            <h2>Project Gallery</h2>
+            <img src="images/stencil-weeding.webp" width="560"
+                 alt="Weeding the vinyl stencil">
+            <img src="images/finished-print.webp" width="560"
+                 alt="Finished screen print">
+        </section>
+
+        <!-- ===== BIOTECH BREAKTHROUGH ===== -->
+        <section id="biotech" class="page" hidden>
+            <h1>Genetics experiment</h1>
+
+            <p>
+                To start off this experiment, we studied DNA extraction and used
+                model building pieces to help us understand how it all works.
+                After we learned the basics, we started this genetics experiment
+                by taking cotton swabs and swabbing the inside of our mouths to
+                collect our cheek cells. We did this so we could test our DNA and
+                see if it matched anyone else's in our own class or in the other
+                class periods. After swabbing, we placed the cotton swabs into a
+                test tube and mixed them up with a special liquid. We then had to
+                let the test tubes sit overnight so the cells would break open and
+                let the DNA float out into the liquid.
+            </p>
+
+            <p>
+                The next day, we came back to finish the experiment and work with
+                the DNA we collected. We took a different sample of liquid called
+                polymerase and added it directly into our test tubes. This liquid
+                is a super important ingredient because its main job is to copy the
+                DNA over and over again. By using the polymerase, we were able to
+                take our small sample and make billions of exact copies of our DNA.
+                Making that many copies was a necessary step because it gave us a
+                big enough sample to actually see and test, which allowed us to
+                finally compare our results with everyone else.
+            </p>
+        </section>
+
+        <!-- Shows the chosen section and hides the others. -->
+        <script>
+            function showPage(id) {
+                document.querySelectorAll(".page").forEach(function (section) {
+                    section.hidden = true;
+                });
+                document.getElementById(id).hidden = false;
+                window.scrollTo(0, 0);
+            }
+        </script>
 
     </body>
 </html>
